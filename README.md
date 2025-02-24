@@ -1,25 +1,25 @@
 # diff & diff3 in Python
 
 A simple implementation of Myers' diff algorithm and a three-way merge algorithm (diff3) in Python.
+This library enables you to compare two sequences efficiently and perform three-way merging for version control or conflict resolution.
 
 ## Features
 - Implements **Myers' diff algorithm** for calculating differences between two sequences.
 - Implements **diff3 algorithm** for three-way merging based on the following reference:
   - https://www.cis.upenn.edu/~bcpierce/papers/diff3-short.pdf
-- **Minimal implementation** with no external dependencies.
-- **Tested on Python 3.13**.
+- **Lightweight and dependency-free**, making it easy to integrate into any project.
+- **Compatible with Python 3.9+**.
 - **No guarantees** on correctness or robustness – use at your own risk.
-- **MIT License**.
+- **MIT License** – free to use and modify.
 
 ## Installation
 
-To install the package, you can use `pip` to install directly from the GitHub repository:
-
+You can install the package via `pip`:
 ```sh
 pip install git+https://github.com/nagaokayuji/diff3.git
 ```
 
-Alternatively, you can clone the repository and run `pip install .` in the root directory:
+Or, clone the repository and install locally:
 ```sh
 git clone https://github.com/nagaokayuji/diff3.git
 cd diff3
