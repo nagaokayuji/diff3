@@ -13,9 +13,10 @@ A simple implementation of Myers' diff algorithm and a three-way merge algorithm
 
 ## Installation
 
-To install the package, clone the repository and run `pip install .` in the root directory:
+To install the package, you can use `pip` to install directly from the GitHub repository:
+
 ```sh
-pip install .
+pip install git+https://github.com/nagaokayuji/diff3.git
 ```
 
 ## Usage
