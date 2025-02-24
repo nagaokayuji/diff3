@@ -19,6 +19,13 @@ To install the package, you can use `pip` to install directly from the GitHub re
 pip install git+https://github.com/nagaokayuji/diff3.git
 ```
 
+Alternatively, you can clone the repository and run `pip install .` in the root directory:
+```sh
+git clone https://github.com/nagaokayuji/diff3.git
+cd diff3
+pip install .
+```
+
 ## Usage
 
 ### diff
