@@ -1,6 +1,6 @@
 import unittest
 
-from diff3.diff3 import merge
+from diff3 import merge
 
 
 class TestDiff3(unittest.TestCase):

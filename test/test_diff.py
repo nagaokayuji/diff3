@@ -1,6 +1,6 @@
 import unittest
 
-from diff3.diff import DiffOperation, DiffType, diff
+from diff3 import DiffOperation, DiffType, diff
 
 
 class TestDiff(unittest.TestCase):
@@ -64,5 +64,6 @@ class TestDiff(unittest.TestCase):
         for original, target in test_cases:
             self._common_assertion(original, target)
 
-        if __name__ == "__main__":
-            unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()
