@@ -11,10 +11,19 @@ A simple implementation of Myers' diff algorithm and a three-way merge algorithm
 - **No guarantees** on correctness or robustness – use at your own risk.
 - **MIT License**.
 
+## Installation
+
+To install the package, clone the repository and run `pip install .` in the root directory:
+```sh
+pip install .
+```
+
 ## Usage
 
 ### diff
 ```python
+from diff3 import diff
+
 original = list("ABCABBA")
 target = list("CBABAC")
 diff_result = diff(original, target)
@@ -25,13 +34,13 @@ print(diff_result)
 
 ### diff3 (Three-way Merge)
 ```python
-from diff3 import merged_str
+from diff3 import merge
 
 base = ['a', 'b', 'c', 'd', 'e']
 a = ['a', 'b', 'c', 'cc', 'd', 'e']
 b = ['a', 'c', 'd', 'dd', 'e', 'f']
 
-merged = merged_str(base, a, b)
+merged = merge(base, a, b)
 print(merged)
 # Output:
 # a
@@ -46,7 +55,7 @@ print(merged)
 ## Running Tests
 Unit tests are included. To run all tests, use:
 ```sh
-python -m unittest discover test
+PYTHONPATH=src python -m unittest discover test
 ```
 
 ## License

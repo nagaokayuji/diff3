@@ -12,7 +12,8 @@ class Chunk(Generic[T]):
     a: Sequence[T]
     b: Sequence[T]
 
-    def __str__(self) -> str:
+    @property
+    def merged_str(self) -> str:
         sep1 = "<<<<<<<"
         sep2 = "======="
         sep3 = ">>>>>>>"
@@ -26,9 +27,6 @@ class Chunk(Generic[T]):
 
         # truly conflicting
         return "\n".join((sep1, *map(str, self.a), sep2, *map(str, self.b), sep3))
-
-    def __repr__(self) -> str:
-        return str(self)
 
 
 class MappingsHelper(Generic[T]):
@@ -101,7 +99,7 @@ class MappingsHelper(Generic[T]):
         return None
 
 
-def merge(base_lines: Sequence[T], a_lines: Sequence[T], b_lines: Sequence[T]) -> list[Chunk]:
+def diff3(base_lines: Sequence[T], a_lines: Sequence[T], b_lines: Sequence[T]) -> list[Chunk]:
     """
     3-way merge algorithm to combine changes from two modified texts (A and B)
     with respect to a common base text.
@@ -143,6 +141,6 @@ def merge(base_lines: Sequence[T], a_lines: Sequence[T], b_lines: Sequence[T]) -
     return result_chunks
 
 
-def merged_str(base_lines: Sequence[T], a_lines: Sequence[T], b_lines: Sequence[T]) -> str:
-    chunks = merge(base_lines, a_lines, b_lines)
-    return '\n'.join((str(chunk) for chunk in chunks if str(chunk)))
+def merge(base_lines: Sequence[T], a_lines: Sequence[T], b_lines: Sequence[T]) -> str:
+    chunks = diff3(base_lines, a_lines, b_lines)
+    return '\n'.join((chunk.merged_str for chunk in chunks if chunk.merged_str))

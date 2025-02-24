@@ -1,6 +1,6 @@
 import unittest
 
-from src.diff import DiffOperation, DiffType, diff
+from diff3.diff import DiffOperation, DiffType, diff
 
 
 class TestDiff(unittest.TestCase):
